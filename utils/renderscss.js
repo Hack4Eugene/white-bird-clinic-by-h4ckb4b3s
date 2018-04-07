@@ -6,7 +6,7 @@ const async = require('async');
 const lodash = require('lodash');
 const sass = require('sass');
 
-const dir = __dirname + '/../public/stylesheets/';
+const dir = __dirname + path.sep + path.join('', '..', 'public', 'stylesheets', '') + path.sep;
 
 /**
  * This node script will automatically render all of the `.scss` files in

@@ -1,17 +1,18 @@
 'use strict';
 const fs = require('fs');
+const path = require('path');
 const lodash = require('lodash');
 const should = require('should');
 
-let Data = require('../../src/data.js');
+let Data = require(path.join('..', '..', 'src', 'data.js'));
 
-let compareJson = require('../assets/data_sample_services.json');
+let compareJson = require(path.join('..', 'assets', 'data_sample_services.json'));
 
 describe('Data Class Tests', () => {
   let csvString = '';
 
   it ('should be able to retrieve csv data from the file system', (done) => {
-    const fileLocation = './test/assets/data_sample_services.csv';
+    const fileLocation = path.join('.', 'test', 'assets', 'data_sample_services.csv');
     Data.readCsvFile(fileLocation).then((res) => {
       csvString = res;
       let compareData = fs.readFileSync(fileLocation).toString();
@@ -26,7 +27,7 @@ describe('Data Class Tests', () => {
     let processed = Data.processCsvDataString(csvString);
 
     // This line is helpful if the data data sample changes
-    // fs.writeFileSync('./test/assets/data_sample.json', JSON.stringify(processed));
+    fs.writeFileSync(path.join('.', 'test', 'assets', 'data_sample.json'), JSON.stringify(processed));
     
     lodash.isEqual(processed, compareJson).should.equal(true);
     

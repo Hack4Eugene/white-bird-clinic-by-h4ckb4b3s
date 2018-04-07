@@ -1,22 +1,16 @@
-ifdef SYSTEMROOT
-  SEPERATOR = '\'
-else
-  SEPERATOR = '/'
-endif
-
 .PHONY: test
 
 start: build
 	node app.js
 
 build:
-	node .${SEPERATOR}utils${SEPERATOR}renderscss.js
+	node ./utils/renderscss.js
 
 seed:
-	node .${SEPERATOR}utils${SEPERATOR}seed.js
+	node ./utils/seed.js
 
 test_unit:
-	.${SEPERATOR}node_modules${SEPERATOR}mocha${SEPERATOR}bin${SEPERATOR}mocha test${SEPERATOR}unit
+	./node_modules/mocha/bin/mocha test/unit
 
 test: test_unit
 

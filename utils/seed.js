@@ -12,7 +12,11 @@ const DATA_CSV_LOCATION = __dirname + '/../test/assets/data_sample_services.csv'
 db.connect('mongodb://localhost/white_bird').then((connection) => {
   // Get data
   var data = new Data(null, DATA_CSV_LOCATION, () => {
-    console.log(data.data);
+    // Data is ready!
+    data.data.forEach((value) => {
+      // Add the data to the database with upserts
+      
+    });
   });
 }).catch((err) => {
   console.error('Error Connecting to database for seeding');
