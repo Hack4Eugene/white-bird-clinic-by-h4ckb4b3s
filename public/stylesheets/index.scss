@@ -1,4 +1,54 @@
+
+$font-stack: 'Roboto', sans-serif;
+$color1: black;
+$color2: white;
+$color3: black;
+$color4: black;
+
+
+
+$p-height: 24px; 
+$p-size: 15px ;
+$p-padding: 20 20 20 20 ;
+$zero-margin: 0 0 0 0;
+
+$small-copy: .9em;
+$small-height: 1.2em;
+
+
+html, body {
+	font-family: $font-stack;
+}
 h1 {
-  color: purple;
-  font-size: 34px;
+  color: $color2;
+  font-size: 1.5em;
+}
+
+h2 {
+	color: $color2;
+	font-size: 24;
+}
+
+h3 {
+	color: $color1;
+	font-size: 20;
+}
+
+h4 {
+	color: color1;
+	font-size: 20;
+	font-style: bold;
+}
+
+
+body { 
+	background-color: $color1;
+}
+
+header {
+	font-family: $font-stack
+}
+
+article {
+	font-family: $font-stack;
 }

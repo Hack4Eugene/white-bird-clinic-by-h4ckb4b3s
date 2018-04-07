@@ -1,0 +1,23 @@
+//- layout.pug
+
+html 
+  head 
+    title #{title}
+    meta(charset='utf=9' lang='en')
+    meta(name='description' content='White Bird Help Book')
+    meta(name='viewport' content='width=device-width', 'initial-scale=1.0')
+    meta(property='' content='')
+    meta(property='' content='')
+    meta(property='' content='')
+    link(rel='' type='')
+    link(rel='stylesheet' 'https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed')
+
+    style
+      include ../public/stylesheets/index.css
+
+    body 
+      block head
+        header
+          a(href='/' class={active: title === 'Say Hello'}) HELP Book
+
+    block contents
