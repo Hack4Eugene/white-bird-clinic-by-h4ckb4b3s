@@ -5,7 +5,7 @@ git clone the repo
 
 cd into the newly cloned directory 
 
-	$ npm install
+	$ make install
 	$ make start
 
 Navigate to your web browser and type in localhost:3001
