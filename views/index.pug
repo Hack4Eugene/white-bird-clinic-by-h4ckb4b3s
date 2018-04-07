@@ -1,1 +1,25 @@
-h1 TEST
+
+extends layout.pug 
+
+block contents 
+  style
+    include ../public/stylesheets/index.css
+
+  article
+    h1 Welcome
+    p Select an option below to help us best serve your needs. 
+
+    a(href='/services') 
+      div.btn
+        div.btn-copy
+          h2 I am a seeking help
+
+    a(href='/provider') 
+      div.btn
+        div.btn-copy
+         h2 I am a service provider or organiation
+
+    a(href='/contributor') 
+      div.btn
+        div.btn-copy
+          h2 I am seeking to contribute
