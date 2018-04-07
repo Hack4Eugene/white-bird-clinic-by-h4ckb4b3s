@@ -1,5 +1,5 @@
 
-//- medical.pug
+//- listing.pug
 
 extends layout.pug 
 
@@ -9,8 +9,13 @@ block contents
 
   article
     section
-      h2 name
-      p address
-      p phone
-      p hours
-      p url
+      if user != null 
+        h2 name
+      if address != null
+        p address
+      if phone != null
+        p phone
+      if hours != null 
+        p hours
+      if url != null 
+        p url

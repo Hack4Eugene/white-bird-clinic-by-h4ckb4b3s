@@ -1,12 +1,9 @@
+// - mixin used for search bar 
 
-extends layout.pug 
-
-block contents 
+mixin search
   style
-    include ../public/stylesheets/index.css
-
-  article
-		form#search(method='post' action='/services')
-    	div.form-group
-      	label(for='fName') Search: 
-      	input#name(type='text' name='query' required value=query)
+    include ../public/stylesheets/search.css
+  div.search
+    form#search(method='post' action='/service')
+      div.search-input 
+        input#search(type='test' name='query' required)
