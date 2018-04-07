@@ -6,6 +6,7 @@ const express = require('express');
 const config = require('./config/config.js');
 const routesFrontend = require('./src/routes_frontend.js');
 const routesApi = require('./src/routes_api.js');
+const db = require('./src/db.js');
 
 var app = express();
 app.set('view engine', 'pug')
@@ -14,13 +15,19 @@ app.set('view engine', 'pug')
 routesFrontend(app);
 routesApi(app);
 
-app.listen(config.port, (err) => {
-  if (err) {
-    console.error('ERROR STARTING SERVER: ');
-    console.error(err);
-    
-    process.exit(1);
-  }
-
-  console.log(`Server started on port ${config.port}`);
+db.connect(config.cbConnection).then((adventure) => {
+  console.log('Connected to databse');
+  app.listen(config.port, (err) => {
+    if (err) {
+      console.error('ERROR STARTING SERVER: ');
+      console.error(err);
+      
+      process.exit(1);
+    }
+  
+    console.log(`Server started on port ${config.port}`);
+  });
+}).catch((err) => {
+  console.error('Unable to connect to databse');
+  process.exit(1);
 });

@@ -118,18 +118,6 @@ class Data {
       return obj;
     }
   }
-
-  /**
-   * Takes data from the subject and service databases and combines them into a single data object
-   * 
-   * @param {object} subjectData JS Data from the subject db
-   * @param {object} serviceData JS Data from the service db
-   * 
-   * @return {object} Combined data object
-   */
-  static combineSubjectAndServices(subjectData, serviceData) {
-
-  }
 }
 
 module.exports = Data;
