@@ -49,6 +49,20 @@ class Data {
   /**
    * STATIC HELPERS
    */
+  static readAndProcessCSVFile(fileLocation) {
+    return new Promise((resolve, reject) => {
+      Data.readCsvFile(fileLocation).then((csvString) => {
+        // We now have a csv string to process
+        var csvObject = Data.processCsvDataString(csvString);
+        resolve(csvObject);
+        return;
+      }).catch((err) => {
+        console.error('Error Reading CSV File');
+        reject(err);
+        return;
+      });
+    })
+  }
 
   /**
    * Reads csv data from the file system

@@ -6,6 +6,9 @@ start: build
 build:
 	node ./utils/renderscss.js
 
+seed:
+	node ./utils/seed.js
+
 test_unit:
 	./node_modules/mocha/bin/mocha test/unit
 
