@@ -18,6 +18,11 @@ html
     body 
       block head
         header
-          a(href='/' class={active: title === 'Say Hello'}) HELP Book
+          li
+            a(href='/' class={active: title === 'Say Hello'}) HELP Book
+          li 
+            a(href='/emergency-contact' class={active: title === 'Say'}) Emergency
+          li 
+            a(href='/search' class={active: title === 'Say Hello'}) Search
 
     block contents
