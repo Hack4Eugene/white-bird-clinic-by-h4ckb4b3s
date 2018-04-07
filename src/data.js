@@ -17,19 +17,23 @@ class Data {
    * 
    * @param {string} csvData String representation of White Bird Help Book CSV Data
    * @param {string} csvFile Optional. File location of White Bird Help Book data
+   * @param {function} cb Callback that will be run when the constructor finishes
    */
-  constructor(csvData, csvFile = null) {
+  constructor(csvData, csvFile = null, cb) {
     if (csvData) {
       data = Data.processCsvDataString(csvData);
+      cb();
       return;
     } else if (csvFile) {
-      Data.readCsvFile(csvFile).then((csvData) => {
-        data = Data.processCsvDataString(csvData);
-        return;
+      Data.readAndProcessCSVFile(csvFile).then((dataFromProcess) => {
+        data = dataFromProcess;
+        cb();
+        return
       }).catch((err) => {
         // If we get here there was a problem
         var error = new Error('ERROR: Error reading csv files');
         console.error(error.message);
+        console.error(err);
         throw error;
       });
     } else {
@@ -49,6 +53,20 @@ class Data {
   /**
    * STATIC HELPERS
    */
+  static readAndProcessCSVFile(fileLocation) {
+    return new Promise((resolve, reject) => {
+      Data.readCsvFile(fileLocation).then((csvString) => {
+        // We now have a csv string to process
+        var csvObject = Data.processCsvDataString(csvString);
+        resolve(csvObject);
+        return;
+      }).catch((err) => {
+        console.error('Error Reading CSV File');
+        reject(err);
+        return;
+      });
+    })
+  }
 
   /**
    * Reads csv data from the file system

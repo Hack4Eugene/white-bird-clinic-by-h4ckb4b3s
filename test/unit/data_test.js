@@ -24,7 +24,7 @@ describe('Data Class Tests', () => {
 
   it ('should be able to process csv data', (done) => {
     let processed = Data.processCsvDataString(csvString);
-    
+
     // This line is helpful if the data data sample changes
     // fs.writeFileSync('./test/assets/data_sample.json', JSON.stringify(processed));
     
