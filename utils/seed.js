@@ -5,13 +5,15 @@
  */
 
 const db = require('../src/db.js');
-const data = require('../src/data.js');
+const Data = require('../src/data.js');
 
-const DATA_CSV_LOCATION = '../test/assets/data_sample_services.csv';
+const DATA_CSV_LOCATION = __dirname + '/../test/assets/data_sample_services.csv';
 
 db.connect('mongodb://localhost/white_bird').then((connection) => {
-  // Process data
-  
+  // Get data
+  var data = new Data(null, DATA_CSV_LOCATION, () => {
+    console.log(data.data);
+  });
 }).catch((err) => {
   console.error('Error Connecting to database for seeding');
 
