@@ -8,4 +8,4 @@ cd into the newly cloned directory
 	$ npm install
 	$ make start
 
-Navigate to your web browser and type in localhost:/3001
+Navigate to your web browser and type in localhost:3001
