@@ -1,0 +1,22 @@
+//- listing.pug
+
+extends layout.pug 
+
+block contents 
+  style
+    include ../public/stylesheets/index.css
+
+  article
+    
+    each val in record
+      section
+        a(href='/listing/' + val._id)
+          h2=val.Service_Name
+          p=val.Hours_of_Operation
+          p=val.Service_Location_Email
+          p=val.Hours_of_Operation
+          p=val.Physical_Site_Address_1
+          p=val.Physical_Site_City
+          p=val.Physical_Site_State
+          p=val.Physical_Site_Zip
+
