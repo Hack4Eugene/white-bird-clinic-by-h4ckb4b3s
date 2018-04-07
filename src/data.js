@@ -110,12 +110,7 @@ class Data {
    * @return {object} Combined data object
    */
   static combineSubjectAndServices(subjectData, serviceData) {
-    // Array of objects representing which SUBJECT data keys should match which SERVICE data keys
-    const matchKeys = [
-      {
 
-      }
-    ]
   }
 }
 
