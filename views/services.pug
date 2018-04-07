@@ -1,0 +1,33 @@
+
+//- services.pug
+
+extends layout.pug 
+
+block contents 
+  style
+    include ../public/stylesheets/index.css
+
+  article
+    h1 Welcome
+    p Maybe you know what you are looking for, maybe you're not quite sure. 
+    p Which of the best describes your current situation.
+
+    a(href='/common') 
+      div.btn
+        div.btn-copy
+          h2 I'd like to view common services available to help me.
+
+    a(href='/category') 
+      div.btn
+        div.btn-copy
+          h2 I'd like to find services organized by category.
+
+    a(href='/alpha') 
+      div.btn
+        div.btn-copy
+         h2 I'd like to view services by alphabetical listing.
+
+    a(href='/emergency') 
+      div.btn
+        div.btn-copy
+          h2 I'm having an emergency. 
