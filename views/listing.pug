@@ -9,13 +9,12 @@ block contents
 
   article
     section
-      if user != null 
-        h2 name
-      if address != null
-        p address
-      if phone != null
-        p phone
-      if hours != null 
-        p hours
-      if url != null 
-        p url
+      h2=record.Service_Name
+      p=record.Hours_of_Operation
+      p=record.Service_Location_Email
+      p=record.Hours_of_Operation
+      p=record.Physical_Site_Address_1
+      p=record.Physical_Site_City
+      p=record.Physical_Site_State
+      p=record.Physical_Site_Zip
+
