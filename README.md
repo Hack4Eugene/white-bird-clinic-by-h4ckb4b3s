@@ -27,3 +27,8 @@ This utility will automatically find `.scss` files in the [public/stylesheets](p
 
 ### Seed
 This utility will "seed" a local mongo database with data from a hard-coded csv file. This can be run with `make seed`, and should only need to be run when there are updates to the data csv
+
+## Windows Development
+Good luck!
+
+Make seems to be unhappy with Windows environments. If Make commands aren't working, try running the commands (or Windows equivalent commands) that are in the [Makefile](Makefile) itself

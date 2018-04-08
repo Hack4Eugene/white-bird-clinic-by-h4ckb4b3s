@@ -1,6 +1,7 @@
 'use strict';
 // External Modules
 const express = require('express');
+const bodyParser = require('body-parser');
 
 // Custom Modules
 const config = require('./config/config.js');
@@ -10,6 +11,8 @@ const db = require('./src/db.js');
 
 var app = express();
 app.set('view engine', 'pug')
+
+app.use(bodyParser.urlencoded({extended: true}));
 
 // Load in the routes
 routesFrontend(app);

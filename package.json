@@ -10,6 +10,7 @@
   "license": "MIT",
   "dependencies": {
     "async": "^2.6.0",
+    "body-parser": "^1.18.2",
     "csv-parse": "^2.2.0",
     "express": "^4.16.3",
     "lodash": "^4.17.5",
