@@ -1,0 +1,62 @@
+article.listings {
+	width: 400px;
+	margin: auto;
+
+}
+
+section.service {
+	background-color: white;
+	border-left: 3px blue solid;
+	margin: 10px;
+	padding: 1 20 1 20;
+	h3 {
+	  size: 1.3em;
+	  font-weight: 500;
+	}
+	span.icon {
+	  position: absolute;
+	  color: #6b6b6b;
+	}
+	p {
+	  padding-left: 25px;
+	}
+}
+
+article.single-listing {
+	width: 400px;
+	background-color: white;
+	margin: auto;
+}
+
+div.left {
+    vertical-align: top;
+	width:60%;
+	display: inline-block;
+	border-right: 1px solid grey;
+	margin-right: 20px;
+
+}
+
+div.right {
+	width: 33%;
+	display: inline-block;
+	vertical-align: top;
+	div.email {
+	  padding-bottom: 10px;
+	  padding-top:15px;
+
+	}
+    a.email {
+      line-height: 24px;
+	  padding-left: 25px;
+	}
+	a.web {
+	  padding-left: 25px;
+	}
+	div.hours {
+	  p {
+	    font-size: .8em;
+	  }
+	}
+
+}

@@ -1,12 +1,14 @@
 form#search {
 	padding: 5px;
 	width: 100%;
+    webkit-appearance: none !important;
 }
 div.search {
 	width: 500px;
 	margin: auto;
 	position: relative;
-	color: #f0f0f0
+	color: #f0f0f0;
+    webkit-appearance: none !important;
 }
 div.search .icon{
 	position: absolute;
