@@ -7,105 +7,148 @@ block contents
   style
     include ../public/stylesheets/listing.css
 
-  div.purple-box
-    div.inner-box
-      h1 THE HELP BOOK
-      h3 A Platform for Care
+  a(href='/')
+    div.purple-box
+      div.inner-box
+        h1 THE HELP BOOK
+        h3 A Platform for Care
+
+      div.search
+      include search.pug
+      +search
 
   article.single-listing
     section
       h2=record.Service_Name
       p=record.Description_of_Service
 
+      img(src='../public/images/google.png')
+
       table
         tr
           td.left
-            h4 Address: 
+            p 
+             |
+             b Address: 
           td
             p=record.Physical_Site_Address_1
         tr
           td.left
-            h4 City: 
+            p
+              |
+              b City: 
           td 
             p=record.Physical_Site_City
         tr
           td.left
-            h4 State: 
+            p
+              |
+              b State: 
           td
             p=record.Physical_Site_State
         tr
           td.left
-            h4 Zipcode
+            p
+              |
+              b Zipcode
           td
             p=record.Physical_Site_Zip
         tr
           td.left
-            h4 Main phone
+            p
+              |
+              b Main phone
           td
             p=record.Main_Phone
         tr 
           td.left
-            h4 Email
+            p
+              |
+              b Email
           td
             p=record.Service_Location_Email
         tr
           td.left
-            h4 Web Site
+            p
+              |
+              b Web Site
           td
             p=record.Web_Address
         tr
           td.left
-            h4 Hours of operation
+            p
+              |
+              b Hours of operation
           td
             p=record.Hours_of_Operation
         tr
           td.left
-            h4 Languages spoke
+            p
+              | 
+              b Languages spoke
           td
             p=record.Languages_Spoken
         tr
           td.left
-            h4 ADA Access
+            p
+              |
+              b ADA Access
           td
             p=record.ADA_Access
         tr
           td.left
-            h4 Fax
+            p
+              |
+              b Fax
           td
             p=record.Fax
         tr
           td.left
-            h4 Intended participats
+            p
+              |
+              b Intended participats
           td
             p=record.Intended_Participants
         tr
           td.left
-            h4 Location
+            p
+              |
+              b Location
           td
             p=record.Location
         tr
           td.left
-            h4 Notes
+            p
+              |
+              b Notes
           td
             p=record.Notes
         tr 
           td.left
-            h4 Other names
+            p
+              |
+              b Other names
           td
             p.record.Other_Name
         tr
           td.left
-            h4 Service location email
+            p
+              |
+              b Service location email
           td 
             p=record.Service_Location_Email
         tr 
           td.left
-            h4 Status
+            p
+              |
+              b Status
           td
             p=record.Status
         tr 
           td.left
-            h4 WBC Crisis Line
+            p
+              |
+              b WBC Crisis Line
           td
             p=record.WBCrisisLine
 

@@ -6,11 +6,16 @@ block contents
   style
     include ../public/stylesheets/listing.css
 
-  div.purple-box
-    div.inner-box
-      img(src='../public/images/put-a-bird-on-it_preview.png').logo
-      h1 THE HELP BOOK
-      h3 A Platform for Care
+  a(href='/')
+    div.purple-box
+      div.inner-box
+        img(src='../public/images/put-a-bird-on-it_preview.png').logo
+        h1 THE HELP BOOK
+        h3 A Platform for Care
+
+      div.search
+      include search.pug
+      +search
       
 
   article.listings
