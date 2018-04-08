@@ -6,11 +6,12 @@ $color2: white;
 $color3: #6A74AF;
 $color4: #4a4a4a;
 $color5: #D8BEE5;
+$color6: #F0F0F0;
 
 
 
 $p-height: 24px; 
-$p-size: 1em;
+$p-size: .9em;
 $p-padding: 20 20 20 20 ;
 $zero-margin: 0 0 0 0;
 
@@ -23,7 +24,7 @@ html, body {
 	margin: 0;
 	padding: 0;
 	min-width: 100%;
-	background-color: $color3;
+	background-color: $color6;
 }
 
 /* Headings  and font style */
@@ -51,7 +52,7 @@ h3 {
 }
 
 p {
-	color: $color1;
+	color: $color4;
 	font-size: $p-size;
 	line-height: $p-height;
 }
@@ -62,12 +63,36 @@ p.small {
 	line-height: $small-height;
 }
 
-/* content layout */ 
-
-body { 
-	background-color: $color1;
+span.icon {
+	display: inline;
 }
 
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+/* content layout */ 
 header {
 	font-family: $font-sans;
 	background-color: $color1;
@@ -89,16 +114,45 @@ header {
 }
 
 div.purple-box {
+	height: 200px;
     background: linear-gradient($color3, $color5);
-    height: 100%;
     padding: 96 48 96 48;
+    h1 {
+      text-align: center;
+    }
+    h3 {
+      text-align: center;
+    }
+    div.inner-box {
+      margin: auto;
+      width: 600px;
+      img.logo {
+        width: 50px;
+        display:block;
+        margin: auto;
+      }
+    }
 }
-article {
-	font-family: $font-serif;
-	max-width: 600px;
+
+section.secondary-options {
+  background-color: $color1;
+	padding-top: 36px;	
+	width: 100%;
 	margin: auto;
-	padding-bottom: 20;
-	background-color: $color1;
+	h3 {
+	  text-align: center;
+	  font-weight: 500;
+	  font-size: 1.3em;
+	}
+}
+
+section.primary-options {
+	font-family: $font-serif;
+	width: 400px;
+	margin: auto;
+	padding-top: 20;
+	padding-bottom: 80;
+	background-color: $color6;
 	h1 {
 	  text-align: center;
 	}
@@ -117,14 +171,18 @@ a {
 }
 
 div.btn-square {
-	width: 45%;
+	width: 50px;
 	height: 150px;
 	display: inline-block;
-	margin: 2.5% 1.25% 2.5% 1.25%;
-	border-radius: 7px;
+	margin: 23px;
+	vertical-align: top;
+	div.btn-copy {
+	  height: 20px;
+	}
 	img {
-		display: block;
-		margin: auto;
+	  width: 100%;
+	  display: block;
+	  margin: auto;
 	}
 	h2 {
 	  text-align: center;
@@ -132,18 +190,14 @@ div.btn-square {
 }
 
 div.btn-rect {
-	width: 95%;
-	height: 100px;
+	width: 200px;
+	height: 25px;
 	display: block;
-	margin: 20 2.5% 20 2.5%;
-	border-radius: 7px;
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	margin: auto;
+	border-bottom: .5px solid $color4;
 	div.btn-copy {
-	  position: relative;
-	  float: left;
-	  top: 50%;
-	  left: 50%;
-	  transform: translate(-50%, -50%);
+		text-align: left;
+
 	}
 	h2 {
 		text-align: center;
