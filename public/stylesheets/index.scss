@@ -23,7 +23,8 @@ html, body {
 	font-family: $font-sans;
 	margin: 0;
 	padding: 0;
-	min-width: 100%;
+	max-width: 100%;
+	overflow-x: hidden;
 	background-color: $color6;
 }
 
@@ -95,26 +96,7 @@ span.icon {
   font-feature-settings: 'liga';
 }
 
-/* content layout */ 
-header {
-	font-family: $font-sans;
-	background-color: $color1;
-	height: 75;
-	margin: 0;
-	padding: 0;
 
-	li {
-		display: inline-block;
-		width: 30%;
-		margin: 25px 1.5% 0 1.5%;
-		text-align: center;
-		text-decoration: none;
-		a {
-			text-decoration: none;
-			color: $color4;
-		}
-	}
-}
 
 div.purple-box {
 	height: 200px;
@@ -176,10 +158,9 @@ a {
 }
 
 div.btn-square {
-	width: 100px;
-	height: 150px;
+	width: 19%;
 	display: inline-block;
-	margin: 25px;
+	margin:2.5%;
 	vertical-align: top;
 	div.btn-copy {
 	  height: 20px;
@@ -195,9 +176,12 @@ div.btn-square {
 }
 
 .container{
+margin: auto;
+height: 216px;
 	text-align: center;
 	background-color: $color6;
-	padding-bottom: 50px;
+	padding: 0 0 50 0;
+	width: 500px;
 }
 
 div.btn-rect {
@@ -213,6 +197,51 @@ div.btn-rect {
 	h2 {
 		text-align: center;
 	}
+}
+
+@media (max-width: 700px){ 
+
+.container{
+	height: auto;
+}
+div.btn-square {
+	width: 40%;
+	display: inline-block;
+    margin: 11% 2.5% 11% 2.5%;
+	vertical-align: top;
+	div.btn-copy {
+	  height: 20px;
+	}
+	img {
+	  width: 100%;
+	  display: block;
+	  margin: 0 auto;
+	}
+	h2 {
+	  text-align: center;
+	}
+}
+
+}
+
+@media (max-width: 455px){ 
+	div.purple-box {
+	height: auto;
+      padding: 48 0 48 0 !important;
+      div.inner-box {
+       width: 200px;
+     }
+    }
+    div.btn-rect {
+      width: 250px;
+	}
+	.container{
+	margin:auto;
+	text-align: center;
+	background-color: $color6;
+	padding-bottom: 50px;
+	width: 90%
+}
 }
 
 
