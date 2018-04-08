@@ -38,7 +38,7 @@ function routes(app) {
 	// all service listings which should then be indexed alphabetically 
 	app.get('/listings', (req, res) => {
 	  var Service = db.models.service;
-	  Service.find().then((adventure) => {
+	  Service.find().sort({ Service_Name: 1}).then((adventure) => {
 	  	let records = adventure;
 	  	// console.log("records", records);
 	  	res.render('listings', {"record": records});
