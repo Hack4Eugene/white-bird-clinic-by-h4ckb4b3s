@@ -8,7 +8,7 @@ const async = require('async');
 const db = require('../src/db.js');
 const Data = require('../src/data.js');
 
-const DATA_CSV_LOCATION = __dirname + '/../test/assets/data_sample_services.csv';
+const DATA_CSV_LOCATION = __dirname + '/../secret/data_combined.csv';
 const REPORT_MODULUS = 50;
 
 db.connect('mongodb://localhost/white_bird').then((connection) => {
@@ -23,6 +23,10 @@ db.connect('mongodb://localhost/white_bird').then((connection) => {
       var saveCount = 0;
       var tasks = data.data.map((value) => {
         return function(callback) {
+          // Before the new service model can be created, the subject needs to be parsed
+          value.Subject = value.Subject.split('|');
+          value.Subject_Subcategory = value.Subject_Subcategory.split('|');
+
           // Save the data to the database
           var newService = new Service(value);
 

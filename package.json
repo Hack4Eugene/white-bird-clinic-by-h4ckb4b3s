@@ -20,6 +20,7 @@
     "scss": "^0.2.4"
   },
   "devDependencies": {
+    "csv-stringify": "^3.0.0",
     "faker": "^4.1.0",
     "mocha": "^5.0.5",
     "should": "^13.2.1"

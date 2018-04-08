@@ -27,8 +27,8 @@ const serviceSchema = new Schema({
   Proofed_By: {type: String},
   Service_Location_Email: {type: String},
   Service_Name: {type: String},
-  Subject: {type: String},
-  Subject_Subcategory: {type: String},
+  Subject: {type: [String]},
+  Subject_Subcategory: {type: [String]},
   Status: {type: String},
   WBCrisisLine: {type: String},
   Web_Address: {type: String}
