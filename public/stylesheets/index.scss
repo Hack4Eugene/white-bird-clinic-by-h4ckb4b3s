@@ -20,13 +20,13 @@ $small-height: 1.2em;
 
 
 html, body {
-	font-family: $font-sans;
-	margin: 0;
-	padding: 0;
-	height: 100%;
-	max-width: 100%;
-	overflow-x: hidden;
-	background-color: $color6;
+  font-family: $font-sans;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  background-color: $color6;
 }
 
 /* Headings  and font style */
@@ -39,37 +39,37 @@ h1 {
 }
 
 h2 {
-  	font-family: $font-serif;
-	color: $color3;
-	font-size: 1.7em;
-	font-weight: 400;
+    font-family: $font-serif;
+  color: $color3;
+  font-size: 1.7em;
+  font-weight: 400;
 }
 
 h3 {
-  	font-family: $font-sans;
-	color: $color4;
-	font-size: 1.3em;
+    font-family: $font-sans;
+  color: $color4;
+  font-size: 1.3em;
     font-weight: 400;
 
 }
 
 p {
-	color: $color4;
-	font-size: $p-size;
-	line-height: $p-height;
+  color: $color4;
+  font-size: $p-size;
+  line-height: $p-height;
 }
 
 p.small {
-	color: $color1;
-	font-size: $small-copy;
-	line-height: $small-height;
+  color: $color1;
+  font-size: $small-copy;
+  line-height: $small-height;
 }
 
 span.icon {
-	display: inline;
-	position: relative;
-	float: right;
-	bottom: 130%;
+  display: inline;
+  position: relative;
+  float: right;
+  bottom: 130%;
 }
 
 .material-icons {
@@ -100,7 +100,7 @@ span.icon {
 
 
 div.purple-box {
-	height: 200px;
+  height: 200px;
     background-image: url(../public/images/whitebird-bg-desktop.png);
     background-repeat: no-repeat;
     background-position: center top;
@@ -125,95 +125,93 @@ div.purple-box {
 
 section.secondary-options {
   background-color: $color1;
-	padding-top: 36px;
-	padding-bottom: 48px;	
-	width: 100%;
-	margin: auto;
-	h3 {
-	  text-align: center;
-	  font-weight: 500;
-	  font-size: 1.3em;
-	}
+  padding-top: 36px;
+  padding-bottom: 48px; 
+  width: 100%;
+  margin: auto;
+  h3 {
+    text-align: center;
+    font-weight: 500;
+    font-size: 1.3em;
+  }
 }
 
 section.primary-options {
-	font-family: $font-serif;
-	width: 100%;
-	padding-top: 20;
-	background-color: $color6;
-	h1 {
-	  text-align: center;
-	}
-	h2 {
-	  text-align: center;
-	}
-	h3 {
-		text-align: center;
-	}
+  font-family: $font-serif;
+  width: 100%;
+  padding-top: 20;
+  background-color: $color6;
+  h1 {
+    text-align: center;
+  }
+  h2 {
+    text-align: center;
+  }
+  h3 {
+    text-align: center;
+  }
 }
 
 /* page elements */
 
 a {
-	text-decoration: none;
+  text-decoration: none;
 }
 
 div.btn-square {
-	width: 19%;
-	display: inline-block;
-	margin:2.5%;
-	vertical-align: top;
-	div.btn-copy {
-	  height: 20px;
-	}
-	img {
-	  width: 100%;
-	  display: block;
-	  margin: 0 auto;
-	}
-	h2 {
-	  text-align: center;
-	}
+  width: 19%;
+  display: inline-block;
+  margin:2.5%;
+  vertical-align: top;
+  div.btn-copy {
+    height: 20px;
+  }
+  img {
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+  }
+  h2 {
+    text-align: center;
+  }
 }
 
 .container{
 margin: auto;
 height: 216px;
-	text-align: center;
-	background-color: $color6;
-	padding: 0 0 50 0;
-	width: 500px;
+  text-align: center;
+  background-color: $color6;
+  padding: 0 0 50 0;
+  width: 500px;
 }
 
 div.btn-rect {
-	width: 400px;
-	height: 30px;
-	display: block;
-	margin: auto;
-	border-bottom: .5px solid $color4;
-	div.btn-copy {
-		text-align: left;
+  width: 400px;
+  height: 30px;
+  display: block;
+  margin: auto;
+  border-bottom: .5px solid $color4;
+  div.btn-copy {
+    text-align: left;
 
-	}
-	h2 {
-		text-align: center;
-	}
+  }
+  h2 {
+    text-align: center;
+  }
 }
 
 section.image {
     width: 100%;
-    height: 400px;
-    overflow: hidden;
     text-align:center;
-	img {
-	  margin: auto;
-	  width: 100%;
-	}
+  img {
+    margin: auto;
+    width: 100%;
+  }
 }
 
 section.mission {
-	width: 400px;
-	margin: 48 auto 48 auto;
+  width: 400px;
+  margin: 48 auto 48 auto;
 
 }
 
@@ -221,46 +219,63 @@ footer {
   background-color: $color4;
   bottom: 0;
   height: 100px;
-	ul {
-	  margin: 0;
-	  li {
-	    color: $color1;
-	    display: inline-block;
-	    width: 33%;
-	    padding: 40 0 40 0;
-	    text-align: center;
-	  }
-	}
+  ul {
+    margin: 0;
+    li {
+      color: $color1;
+      display: inline-block;
+      width: 33%;
+      padding: 40 0 40 0;
+      text-align: center;
+    }
+  }
 }
 
 @media (max-width: 700px){ 
 
-.container{
-	height: auto;
-}
-div.btn-square {
-	width: 40%;
-	display: inline-block;
-    margin: 11% 2.5% 11% 2.5%;
-	vertical-align: top;
-	div.btn-copy {
-	  height: 20px;
-	}
-	img {
-	  width: 100%;
-	  display: block;
-	  margin: 0 auto;
-	}
-	h2 {
-	  text-align: center;
-	}
-}
+  .container{
+    height: auto;
+  }
+  div.btn-square {
+    width: 40%;
+    display: inline-block;
+      margin: 11% 2.5% 11% 2.5%;
+    vertical-align: top;
+    div.btn-copy {
+      height: 20px;
+    }
+    img {
+        width: 100%;
+        display: block;
+      margin: 0 auto;
+    }
+    h2 {
+        text-align: center;
+    }
+  }
+  
+
+  footer {
+    background-color: $color4;
+    bottom: 0;
+    height: 100px;
+    ul {
+      margin: 0;
+      li {
+        color: $color1;
+        display: inline-block;
+        width: 33%;
+        padding: 40 0 40 0;
+        text-align: center;
+      }
+    }
+  }
 
 }
 
 @media (max-width: 455px){ 
-	div.purple-box {
-	height: auto;
+  div.purple-box {
+  height: auto;
       padding: 48 0 48 0 !important;
       div.inner-box {
        width: 200px;
@@ -268,14 +283,14 @@ div.btn-square {
     }
     div.btn-rect {
       width: 250px;
-	}
-	.container{
-	margin:auto;
-	text-align: center;
-	background-color: $color6;
-	padding-bottom: 50px;
-	width: 90%
-}
+  }
+  .container{
+  margin:auto;
+  text-align: center;
+  background-color: $color6;
+  padding-bottom: 50px;
+  width: 90%
+ }
 }
 
 
