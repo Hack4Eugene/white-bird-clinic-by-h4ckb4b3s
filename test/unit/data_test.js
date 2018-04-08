@@ -11,7 +11,7 @@ let compareJson = require(path.join('..', 'assets', 'data_sample_services.json')
 describe('Data Class Tests', () => {
   let csvString = '';
 
-  it ('should be able to retrieve csv data from the file system', (done) => {
+  it('should be able to retrieve csv data from the file system', (done) => {
     const fileLocation = path.join('.', 'test', 'assets', 'data_sample_services.csv');
     Data.readCsvFile(fileLocation).then((res) => {
       csvString = res;
@@ -23,7 +23,7 @@ describe('Data Class Tests', () => {
     });
   });
 
-  it ('should be able to process csv data', (done) => {
+  it('should be able to process csv data', (done) => {
     let processed = Data.processCsvDataString(csvString);
 
     // This line is helpful if the data data sample changes
