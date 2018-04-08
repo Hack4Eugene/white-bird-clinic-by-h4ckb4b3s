@@ -73,6 +73,9 @@ Navigate to your web browser and type in localhost:3001
 
 ## Environment Variables
 ### Process
+- NODE_ENV
+  - Node environment for the process. Default is `production`
+
 - PORT
 	- Port to use for the server. Default is 3001
 
@@ -81,6 +84,12 @@ Navigate to your web browser and type in localhost:3001
 
 - SESSION_SECRET
 	- `secret` used for session auth
+
+- WHITE_BIRD_USER
+  - Detfault `production` Only used when seeding database - the user name for access to the site
+
+- WHITE_BIRD_USER_PASS
+  - Only used when seeding database - the password for access to the site
 
 ## Utilities
 Utilites live in the [utils](utils) directory. They are helper processes that are generally designed for development purposes
@@ -101,6 +110,15 @@ This project also includes a partially featured REST API for programatic access 
 Good luck!
 
 Make seems to be unhappy with Windows environments. If Make commands aren't working, try running the commands (or Windows equivalent commands) that are in the [Makefile](Makefile) itself
+
+### Acknowledgements
+(Not guranteed to be inclusive)
+
+- Christianna Hannegan and Heather Sielicki
+  - Champions for the White Bird Hack for a Cause challenge. Their help was invaluable
+
+- Colt Steel [https://www.udemy.com/user/coltsteele/](https://www.udemy.com/user/coltsteele/)
+  - Local Authentication system based heavily off of systems he designed for his Web Developer Boot Camp course
 
 ```
                                                                             bbbbbbbb                             bbbbbbbb                                                

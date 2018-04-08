@@ -15,24 +15,43 @@ const User = db.models.user;
 // Auth
 const passport = require('passport');
 const localStrategy = require('passport-local');
+const isLoggedIn = require('./src/middleware/isLoggedIn.js');
 
 var app = express();
 app.set('view engine', 'pug')
 
 // Auth
-app.use(passport.initialize());
-app.use(passport.session());
 app.use(expressSession({
   secret: config.sessionSecret,
   resave: false,
   saveUninitialized: false
 }));
-
+passport.use(new localStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
+app.use(passport.initialize());
+app.use(passport.session());
+
 app.use(bodyParser.urlencoded({extended: true}));
 app.use('/public', express.static('public'))
+
+app.get('/login', (req, res) => {
+  res.render('login');
+});
+
+app.post('/login', passport.authenticate('local', { 
+  failureRedirect: '/login'
+}), (req, res) => {
+  res.redirect('/');
+});
+
+app.get('/logout', (req, res) => {
+  req.logout();
+  res.redirect('/login');
+});
+
+app.use(isLoggedIn);
 
 // Load in the routes
 routesFrontend(app);

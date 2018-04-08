@@ -12,7 +12,7 @@ function routes(app) {
   
   app.get('/index', (req, res) => {
     res.render('index');
-  });  
+	});
   app.get('/services', (req, res) => {
 	  res.render('services');
 	});
