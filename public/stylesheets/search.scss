@@ -29,3 +29,10 @@ input#search {
 	font-family: "Roboto", sans-serif;
 
 }
+
+@media (max-width: 455px){ 
+
+input#search {
+	width: auto;
+	}
+}
