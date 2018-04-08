@@ -1,9 +1,11 @@
 // - mixin used for search bar 
-
+link(href='//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css' rel='stylesheet')
 mixin search
   style
     include ../public/stylesheets/search.css
   div.search
     form#search(method='post' action='/service')
-      div.search-input 
-        input#search(type='test' name='query' required)
+      div.search-input
+        span.icon
+          i.fa.fa-search
+        input#search(type='test' name='query' placeholder="Browse Directory" required)
