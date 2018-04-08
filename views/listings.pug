@@ -20,7 +20,7 @@ block contents
 
   article.listings
     h2 Alphabetical listings
-    each val in record     
+    each val in record.slice(0, 20)     
       section.service
         a(href='/listing/' + val._id)
           h3=val.Service_Name
@@ -54,7 +54,3 @@ block contents
                 i.fa.fa-clock-o 
               p=(val.Hours_of_Operation).substr(0,15)
             
-
-          
-
-
