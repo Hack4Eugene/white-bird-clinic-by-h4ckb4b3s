@@ -10,6 +10,8 @@ const db = require('../db.js');
 /**
  * Models used - each model object is associated with the exact collection name
  * used to interact with it
+ * 
+ * The User model is not included for security concerns
  */
 const models = {
   services: db.models.service,

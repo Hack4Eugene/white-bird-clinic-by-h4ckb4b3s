@@ -5,8 +5,8 @@ const ApiService = require('./services/api_service.js');
 
 // All routes in the API routing paradigm have a specific prefix
 const PREFIX = '/api';
-const V1 = '/v1';
-var v1Prefix = PREFIX + V1;
+const V0 = '/v0';
+var v0 = PREFIX + V0;
 
 /**
  * This function estableshes routes for the White Bird Help Book REST API
@@ -14,8 +14,17 @@ var v1Prefix = PREFIX + V1;
  * @param {object} app App generated from Express
  */
 function routes(app) {
-  // Version 1 routes
-  app.get(v1Prefix + '/:collection', (req, res) => {
+  // Version 0 routes
+  /**
+   * Route for the base "collection" path. If this route is called with a query string,
+   * the system will validate and do that query. If there is no query string (no queries
+   * are defined) the system will respond with _all_ items in the collection
+   * 
+   * Without a query string, this _can_ take some time
+   * 
+   * TODO: Add pagination for all queries
+   */
+  app.get(v0 + '/:collection', (req, res) => {
     // Get the collection
     let collection = req.params.collection;
 
@@ -51,7 +60,10 @@ function routes(app) {
     }
   });
 
-  app.get(v1Prefix + '/:collection/:id', (req, res) => {
+  /**
+   * Get's a single item from the collection with the specified id
+   */
+  app.get(v0 + '/:collection/:id', (req, res) => {
     // Get the params
     let collection = req.params.collection;
     let id = req.params.id;
