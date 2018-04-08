@@ -28,6 +28,9 @@ This utility will automatically find `.scss` files in the [public/stylesheets](p
 ### Seed
 This utility will "seed" a local mongo database with data from a hard-coded csv file. This can be run with `make seed`, and should only need to be run when there are updates to the data csv
 
+## JSON REST API
+This project also includes a fully featured REST API for programatic access to the Help Book data
+
 ## Windows Development
 Good luck!
 

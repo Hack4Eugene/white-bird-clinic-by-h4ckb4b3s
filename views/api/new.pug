@@ -1,9 +1,0 @@
-h1 New Service
-
-form(action='/api/v1/services' method='POST')
-  each key in keys
-    div.form-container
-      label(for={key})= key
-      input(id=key name=key type='text')
-
-  input(type='submit')

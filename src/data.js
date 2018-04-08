@@ -5,9 +5,6 @@ const fs = require('fs');
 const csvParse = require('csv-parse/lib/sync');
 const lodash = require('lodash');
 
-// Master "data" object that contains White Bird Help Book data
-var data = {};
-
 class Data {
   /**
    * Constructor takes a csv string of White Bird Help Book data. Can take either a full csv
@@ -20,13 +17,15 @@ class Data {
    * @param {function} cb Callback that will be run when the constructor finishes
    */
   constructor(csvData, csvFile = null, cb) {
+    this.data = {};
+
     if (csvData) {
-      data = Data.processCsvDataString(csvData);
+      this.data = Data.processCsvDataString(csvData);
       cb();
       return;
     } else if (csvFile) {
       Data.readAndProcessCSVFile(csvFile).then((dataFromProcess) => {
-        data = dataFromProcess;
+        this.data = dataFromProcess;
         cb();
         return
       }).catch((err) => {
@@ -43,11 +42,8 @@ class Data {
     }
   }
 
-  /**
-   * Master "data" object that contains White Bird Help Book data
-   */
-  get data() {
-    return data;
+  get fields() {
+    return Object.keys(this.data[0]);
   }
 
   /**
