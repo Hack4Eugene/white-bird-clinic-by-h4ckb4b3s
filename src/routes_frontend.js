@@ -57,6 +57,24 @@ function routes(app) {
 	  	res.render('listing', {"record": record});
 	  });
 	});
+
+	app.get('/categories', (req, res) => {
+	  var Service = db.models.service;
+	  Service.find().then((adventure) => {
+	  	let records = adventure;
+	  	console.log("records", records);
+	  	res.render('listings', {"record": records});
+	  });
+	});
+
+	app.get('/category/:id', (req, res) => {
+	  var Service = db.models.service;
+	  Service.find().then((adventure) => {
+	  	let records = adventure;
+	  	console.log("records", records);
+	  	res.render('listings', {"record": records});
+	  });
+	});
 }
 
 

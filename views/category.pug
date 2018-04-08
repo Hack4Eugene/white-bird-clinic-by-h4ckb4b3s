@@ -5,9 +5,9 @@ extends layout.pug
 
 block contents 
   style
-    include ../public/stylesheets/listing.css
+    include ../public/stylesheets/index.css
 
-  article.single-listing
+  article
     section
       h2=record.Service_Name
       p=record.Hours_of_Operation
@@ -17,4 +17,3 @@ block contents
       p=record.Physical_Site_City
       p=record.Physical_Site_State
       p=record.Physical_Site_Zip
-
