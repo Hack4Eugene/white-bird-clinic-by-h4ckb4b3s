@@ -1,14 +1,12 @@
 'use strict';
 
 const db = require('./db.js');
+const ApiService = require('./services/api_service.js');
 
 // All routes in the API routing paradigm have a specific prefix
 const PREFIX = '/api';
 const V1 = '/v1';
 var v1Prefix = PREFIX + V1;
-
-// Get models
-var Service = db.models.service;
 
 /**
  * This function estableshes routes for the White Bird Help Book REST API
@@ -17,28 +15,57 @@ var Service = db.models.service;
  */
 function routes(app) {
   // Version 1 routes
-  app.get(v1Prefix + '/services', (req, res) => {
-    // Request all data from the provided connection
-    Service.find({}).then((adventure) => {
+  app.get(v1Prefix + '/:collection', (req, res) => {
+    // Get the collection
+    let collection = req.params.collection;
+
+    // Get any queries
+    let queries = req.query;
+
+    // If there are queries we need to use the query function
+    if (Object.keys(queries)) {
+      ApiService.findWithQuery(collection, queries).then((adventure) => {
+        return res.send(adventure);
+      }).catch((err) => {
+        if (!err.message || !err.code) {
+          console.error(err);
+          res.status(500).send('Internal Server Error');
+          return
+        }
+  
+        return res.status(err.code).send(err.message);
+      });
+    } else {
+      // Request all data from the provided collection
+      ApiService.findAll(collection).then((adventure) => {
+        return res.send(adventure);
+      }).catch((err) => {
+        if (!err.message || !err.code) {
+          console.error(err);
+          res.status(500).send('Internal Server Error');
+          return
+        }
+
+        res.status(err.code).send(err.message);
+      });
+    }
+  });
+
+  app.get(v1Prefix + '/:collection/:id', (req, res) => {
+    // Get the params
+    let collection = req.params.collection;
+    let id = req.params.id;
+
+    ApiService.findOneById(collection, id).then((adventure) => {
       res.send(adventure);
     }).catch((err) => {
-      res.statusCode(500).send('Internal Server Error');
-    })
-  });
+      if (!err.message || !err.code) {
+        console.error(err);
+        res.status(500).send('Internal Server Error');
+        return
+      }
 
-  app.get(v1Prefix + '/services/new', (req, res) => {
-    // Get the schema keys for automatic generation of forms
-    let keys = Object.keys(Service.schema.obj);
-    // Serve a new collection form
-    res.render('./api/new.pug', {keys: keys});
-  });
-
-  app.post(v1Prefix + '/services', (req, res) => {
-    let newService = new Service(req.body);
-    newService.save().then((adventure) => {
-      res.send('New service accepted');
-    }).catch((err) => {
-      res.statusCode(500).send('Error saving new service');
+      res.status(err.code).send(err.message);
     });
   });
 }
