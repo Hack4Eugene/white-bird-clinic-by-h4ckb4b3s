@@ -17,7 +17,9 @@ var config = {
   cbConnection: process.env.DB_CONNECTION || 'mongodb://localhost/white_bird',
 
   // Auth
-  sessionSecret: process.env.SESSION_SECRET
+  sessionSecret: process.env.SESSION_SECRET,
+  userName: process.env.WHITE_BIRD_USER || 'WhiteBirdUser',
+  userPass: process.env.WHITE_BIRD_USER_PASS
 }
 
 module.exports = config;

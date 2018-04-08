@@ -4,9 +4,11 @@
  * This script is used to seed the Help Book database for testing purposes
  */
 const async = require('async');
+const passport = require('passport');
 
 const db = require('../src/db.js');
 const Data = require('../src/data.js');
+const config = require('../config/config.js');
 
 const DATA_CSV_LOCATION = __dirname + '/../secret/data_combined.csv';
 const REPORT_MODULUS = 50;
@@ -18,12 +20,44 @@ const REPORT_MODULUS = 50;
 let subjectTracker = [];
 
 db.connect('mongodb://localhost/white_bird').then((connection) => {
-  handleService();
+  handleUser();
 }).catch((err) => {
   console.error('Error Connecting to database for seeding');
 
   process.exit(1);
 });
+
+function handleUser() {
+  const User = db.models.user;
+
+  if (!config.userPass) {
+    // Pass over this one if there isn't a password
+    console.log('No WHITE_BIRD_USER_PASS envar set - skipping `User` collection');
+    return handleService();
+  }
+
+  console.log('Seeding User Collection');
+  
+  // Remove all existing users
+  User.remove({}).then((adventure) => {
+    console.log(`Removed ${adventure.n} User Elements`);
+
+    User.register(new User({username: config.userName}), config.userPass).then((adventure) => {
+      console.log(`New user created: ${config.userName}`);
+      handleService();
+    }).catch((err) => {
+      console.error(`Error registering User ${config.userName}`);
+      console.error(err);
+  
+      handleService();
+    });
+  }).catch((err) => {
+    console.error(`Error Removing Users`);
+    console.error(err);
+
+    handleService();
+  });
+}
 
 function handleService() {
   console.log('Seeding Service Collection');
