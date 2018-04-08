@@ -12,7 +12,8 @@ const db = require('../db.js');
  * used to interact with it
  */
 const models = {
-  services: db.models.service
+  services: db.models.service,
+  subjects: db.models.subject
 }
 
 class ApiService {

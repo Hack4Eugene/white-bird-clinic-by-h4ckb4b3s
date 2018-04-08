@@ -11,24 +11,42 @@ const Data = require('../src/data.js');
 const DATA_CSV_LOCATION = __dirname + '/../secret/data_combined.csv';
 const REPORT_MODULUS = 50;
 
+/**
+ * Subject information that will be tracked when we add our services
+ * Each object in this array matches the pattern set in the `subject` model
+ */
+let subjectTracker = [];
+
 db.connect('mongodb://localhost/white_bird').then((connection) => {
-  var Service = db.models.service;
+  handleService();
+}).catch((err) => {
+  console.error('Error Connecting to database for seeding');
+
+  process.exit(1);
+});
+
+function handleService() {
+  console.log('Seeding Service Collection');
+  let Service = db.models.service;
   
   // Clear all data
   Service.remove({}).then((adventure) => {
-    console.log(`Removed ${adventure.n} Elements`);
+    console.log(`Removed ${adventure.n} Service Elements`);
     // Get data
-    var data = new Data(null, DATA_CSV_LOCATION, () => {
+    let data = new Data(null, DATA_CSV_LOCATION, () => {
       // Data is ready!
-      var saveCount = 0;
-      var tasks = data.data.map((value) => {
+      let saveCount = 0;
+      let tasks = data.data.map((value) => {
         return function(callback) {
           // Before the new service model can be created, the subject needs to be parsed
           value.Subject = value.Subject.split('|');
           value.Subject_Subcategory = value.Subject_Subcategory.split('|');
 
+          // We need to keep track of this subject data, so that we can add it to the subject db later
+          addSubjectsToTracker(value.Subject, value.Subject_Subcategory);
+
           // Save the data to the database
-          var newService = new Service(value);
+          let newService = new Service(value);
 
           newService.save().then((adventure) => {
             saveCount++;        
@@ -49,18 +67,105 @@ db.connect('mongodb://localhost/white_bird').then((connection) => {
           console.error('Error detected');
         }
 
-        console.log('Finished Seeding!');
+        console.log('Finished Seeding Services');
 
-        db.disconnect((err) => {
-          console.log('Databse Disconnected - process finished')
-        });
+        handleSubject();
       });
     });
   }).catch((err) => {
-    console.error('Error deleting existing elements');
-  });  
-}).catch((err) => {
-  console.error('Error Connecting to database for seeding');
+    console.error('Error deleting existing Service elements');
+  });
+}
 
-  process.exit(1);
-});
+function handleSubject() {
+  console.log('Seeding Subject Collection');
+  let Subject = db.models.subject;
+
+  // Clear all data
+  Subject.remove({}).then((adventure) => {
+    console.log(`Removed ${adventure.n} Subject Elements`);
+
+    // Generate saving tasks
+    let saveCount = 0;
+    let tasks = subjectTracker.map((trackedSubject) => {
+      return function(callback) {
+        let newSubject = new Subject(trackedSubject);
+
+        newSubject.save().then((adventure) => {
+          saveCount++;        
+          if (saveCount % REPORT_MODULUS === 0) {
+            console.log(`Saved ${saveCount} services. ${((saveCount / subjectTracker.length) * 100).toFixed(2)}%`)
+          }
+
+          callback(null, true);
+        }).catch((err) => {
+          console.error(`Error saving model to database: ${err}`);
+          callback(err);
+        });
+      }
+    });
+
+    async.parallel(tasks, (err, res) => {
+      if (err) {
+        console.error('Error detected');
+      }
+
+      console.log('Finished Seeding Subject');
+
+      db.disconnect().then(() => {
+        console.log('Disconnected from database - process complete!')
+      }).catch((err) => {
+        console.error('Error Disconnecting');
+        console.error(err);
+
+        process.exit(1);
+      })
+    });
+  }).catch((err) => {
+    console.error('Error deleting existing Subject elements');
+    console.error(err);
+  });
+}
+
+/**
+ * Takes an array of subjects and subject subcategories from the service handler
+ * and adds them to the subject tracker
+ * 
+ * @param {String[]} subjects Subject array
+ * @param {String[]} subjectSubcategories Subject_Subcategory array
+ */
+function addSubjectsToTracker(subjects, subjectSubcategories) {
+  subjects.forEach((subject, subjectIndex) => {
+    // For each subject we were given, determine if it is already in our tracker
+    let subjectFound = false;
+    subjectTracker.forEach((trackedSubject, trackedSubjectIndex) => {
+      if (subject === trackedSubject.Subject) {
+        // A matching subject was found! Determine if we need to add any subject subcatagories
+        subjectFound = true;
+        
+        if (subjectSubcategories[subjectIndex]) {
+          // There is a subcategory for this subject, does it need added to our tracker?
+          if (!trackedSubject.Subject_Subcategories.includes(subjectSubcategories[subjectIndex])) {
+            // The answer is yes!
+            subjectTracker[trackedSubjectIndex].Subject_Subcategories.push(subjectSubcategories[subjectIndex]);
+          }
+        }
+      }
+    });
+
+    if (!subjectFound) {
+      // A matching subject was not found! Add it!
+      let newSubjectRecord = {
+        Subject: subject,
+        Subject_Subcategories: []
+      }
+
+      // Add a subcategory if needed
+      if (subjectSubcategories[subjectIndex]) {
+        newSubjectRecord.Subject_Subcategories.push(subjectSubcategories[subjectIndex]);
+      }
+
+      subjectTracker.push(newSubjectRecord);
+    }
+  });
+}

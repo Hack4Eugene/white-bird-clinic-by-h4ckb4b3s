@@ -6,5 +6,6 @@ const mongoose = require('mongoose');
 mongoose.set('bufferCommands', false);
 
 require('./models/service.js');
+require('./models/subject.js');
 
-module.exports =  mongoose;
+module.exports = mongoose;
