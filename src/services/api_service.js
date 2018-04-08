@@ -99,7 +99,7 @@ class ApiService {
    */
   static findServicesBySubject(subject, subCategory = null) {
     return new Promise((resolve, reject) => {
-      console.log(models);
+
       models.services.find({Subject: subject}).then((adventure) => {
         return resolve(adventure);
       }).catch((err) => {
