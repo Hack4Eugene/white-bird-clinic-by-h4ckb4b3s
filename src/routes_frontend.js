@@ -40,7 +40,7 @@ function routes(app) {
 	  var Service = db.models.service;
 	  Service.find().then((adventure) => {
 	  	let records = adventure;
-	  	console.log("records", records);
+	  	// console.log("records", records);
 	  	res.render('listings', {"record": records});
 	  });
 	});
@@ -49,11 +49,11 @@ function routes(app) {
 	// specific information
 	app.get('/listing/:id', (req, res) => {
 	  let id = req.params.id;
-	  console.log("id", id);
+	  // console.log("id", id);
 	  var Service = db.models.service;
 	  Service.findOne({'_id': id }).then((adventure) => {
 	  	let record = adventure;
-	  	console.log("record", record);
+	  	// console.log("record", record);
 	  	res.render('listing', {"record": record});
 	  });
 	});
@@ -62,7 +62,7 @@ function routes(app) {
 	  var Service = db.models.service;
 	  Service.find().then((adventure) => {
 	  	let records = adventure;
-	  	console.log("records", records);
+	  	// console.log("records", records);
 	  	res.render('listings', {"record": records});
 	  });
 	});
@@ -71,7 +71,7 @@ function routes(app) {
 	  var Service = db.models.service;
 	  Service.find().then((adventure) => {
 	  	let records = adventure;
-	  	console.log("records", records);
+	  	// console.log("records", records);
 	  	res.render('listings', {"record": records});
 	  });
 	});
