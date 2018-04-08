@@ -88,6 +88,26 @@ class ApiService {
       });
     });
   }
+
+  /**
+   * Finds all services that are related to a provided subject and (optionally) subcategory
+   * 
+   * Note: Only relates to the `Services` collection
+   * 
+   * @param {String} subject Subject to search for
+   * @param {String} subCategory Optional. SubCategory to search for
+   */
+  static findServicesBySubject(subject, subCategory = null) {
+    return new Promise((resolve, reject) => {
+      console.log(models);
+      models.services.find({Subject: subject}).then((adventure) => {
+        return resolve(adventure);
+      }).catch((err) => {
+        console.error(err);
+        return reject(generateRejection('Error querying database', 500));
+      });
+    });
+  }
 }
 
 module.exports = ApiService;
