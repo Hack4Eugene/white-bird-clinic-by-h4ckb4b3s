@@ -215,11 +215,17 @@ section.mission {
 
 }
 
+section.login {
+  width: 400px;
+  margin: auto;
+}
+
 footer {
   background-color: $color4;
   bottom: 0;
   height: 100px;
   ul {
+    padding:0;
     margin: 0;
     li {
       color: $color1;
@@ -232,7 +238,6 @@ footer {
 }
 
 @media (max-width: 700px){ 
-
   .container{
     height: auto;
   }
@@ -254,7 +259,6 @@ footer {
     }
   }
   
-
   footer {
     background-color: $color4;
     bottom: 0;
@@ -285,12 +289,12 @@ footer {
       width: 250px;
   }
   .container{
-  margin:auto;
-  text-align: center;
-  background-color: $color6;
-  padding-bottom: 50px;
-  width: 90%
- }
+    margin:auto;
+    text-align: center;
+    background-color: $color6;
+    padding-bottom: 50px;
+    width: 90%
+   }
 }
 
 
