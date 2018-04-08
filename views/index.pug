@@ -6,7 +6,6 @@ block contents
     include ../public/stylesheets/index.css
 
   div.purple-box
-    img(src='')
     h1 THE
     h1 HELP
     h1 BOOK
@@ -14,20 +13,48 @@ block contents
 
    
   article
-    h1 Welcome
-    p Select an option below to help us best serve your needs. 
+    include search.pug
+    +search
+
+    h2 How can we help you?
+    h3 Common Services
 
     a(href='/services') 
-      div.btn
-        div.btn-copy
-          h2 I am a seeking help
+      div.btn-square
+        img(src='../public/images/mental-services.png')
+        h3 Mental Health Services
 
     a(href='/provider') 
-      div.btn
-        div.btn-copy
-         h2 I am a service provider or organiation
+      div.btn-square
+        img(src='../public/images/medical-services.png')
+        h3 Medical Health Services
 
     a(href='/contributor') 
-      div.btn
+      div.btn-square
+        img(src='/public/images/dental-services.png')
+        h3 Dental Health Services    
+
+    a(href='/contributor') 
+      div.btn-square
+        img(src='/public/images/basic-services.png')
+        h3 Basic Needs
+
+    a(href='/provider') 
+      div.btn-rect
         div.btn-copy
-          h2 I am seeking to contribute
+         h3 Search by category
+
+    a(href='/contributor') 
+      div.btn-rect
+        div.btn-copy
+          h3 Search by agency  
+
+    a(href='/contributor') 
+      div.btn-rect
+        div.btn-copy
+          h3 I want to update/edit a record
+
+    a(href='/contribute') 
+      div.btn-rect
+        div.btn-copy
+          h3 I want to add a new record
