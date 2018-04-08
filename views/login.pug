@@ -1,0 +1,15 @@
+extends layout.pug 
+
+block contents 
+  style
+    include ../public/stylesheets/login.css
+
+  article
+    section
+      h2= 'Please Log In'
+
+      form(action='/login' method='POST')
+        input(type='text' name='username' placeholder='username')
+        input(type='password' name='password' placeholder='password')
+
+        button Login

@@ -11,6 +11,7 @@ if (!process.env.SESSION_SECRET) {
  * Module handles all configurations
  */
 var config = {
+  nodeEnv: process.env.NODE_ENV || 'production',
   port: process.env.PORT || 3001,
 
   // Connection string for our database
