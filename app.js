@@ -13,6 +13,7 @@ var app = express();
 app.set('view engine', 'pug')
 
 app.use(bodyParser.urlencoded({extended: true}));
+app.use('/public', express.static('public'))
 
 // Load in the routes
 routesFrontend(app);
