@@ -1,4 +1,3 @@
-
 extends layout.pug 
 
 
@@ -10,7 +9,7 @@ block contents
     div.inner-box
       img(src='../public/images/put-a-bird-on-it_preview.png').logo
       h1 THE HELP BOOK
-      h3 This is a tagline
+      h3 A Platform for Care
 
     div.search
       include search.pug
@@ -22,6 +21,7 @@ block contents
     h2 How can we help you?
     h3 Common Services
 
+  .container 
     a(href='/services') 
       div.btn-square
         img(src='../public/images/mental-services.png')
@@ -53,20 +53,26 @@ block contents
       div.btn-rect
         div.btn-copy
           p Search by category
-          span.icon
-            i.fa.fa-angle-right
+        span.icon
+         i.fa.fa-angle-right
 
     a(href='/contributor') 
       div.btn-rect
         div.btn-copy
-          p Search by agency  
+          p Search by agency
+        span.icon
+         i.fa.fa-angle-right 
 
     a(href='/contributor') 
       div.btn-rect
         div.btn-copy
           p I want to update/edit a record
+        span.icon
+         i.fa.fa-angle-right
 
     a(href='/contribute') 
       div.btn-rect
         div.btn-copy
           p I want to add a new record
+        span.icon
+         i.fa.fa-angle-right

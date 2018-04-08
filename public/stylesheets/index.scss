@@ -65,6 +65,9 @@ p.small {
 
 span.icon {
 	display: inline;
+	position: relative;
+	float: right;
+	bottom: 130%;
 }
 
 .material-icons {
@@ -115,7 +118,10 @@ header {
 
 div.purple-box {
 	height: 200px;
-    background: linear-gradient($color3, $color5);
+    background-image: url(../public/images/whitebird-bg-desktop.png);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-attachment: fixed;
     padding: 96 48 96 48;
     h1 {
       text-align: center;
@@ -136,7 +142,8 @@ div.purple-box {
 
 section.secondary-options {
   background-color: $color1;
-	padding-top: 36px;	
+	padding-top: 36px;
+	padding-bottom: 36px;	
 	width: 100%;
 	margin: auto;
 	h3 {
@@ -148,10 +155,8 @@ section.secondary-options {
 
 section.primary-options {
 	font-family: $font-serif;
-	width: 400px;
-	margin: auto;
+	width: 100%;
 	padding-top: 20;
-	padding-bottom: 80;
 	background-color: $color6;
 	h1 {
 	  text-align: center;
@@ -171,10 +176,10 @@ a {
 }
 
 div.btn-square {
-	width: 50px;
+	width: 100px;
 	height: 150px;
 	display: inline-block;
-	margin: 23px;
+	margin: 25px;
 	vertical-align: top;
 	div.btn-copy {
 	  height: 20px;
@@ -182,16 +187,22 @@ div.btn-square {
 	img {
 	  width: 100%;
 	  display: block;
-	  margin: auto;
+	  margin: 0 auto;
 	}
 	h2 {
 	  text-align: center;
 	}
 }
 
+.container{
+	text-align: center;
+	background-color: $color6;
+	padding-bottom: 50px;
+}
+
 div.btn-rect {
-	width: 200px;
-	height: 25px;
+	width: 400px;
+	height: 30px;
 	display: block;
 	margin: auto;
 	border-bottom: .5px solid $color4;
