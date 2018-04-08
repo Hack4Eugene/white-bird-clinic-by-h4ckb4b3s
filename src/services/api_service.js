@@ -58,7 +58,7 @@ class ApiService {
       models[collection].findById(id).then((adventure) => {
         return resolve(adventure);
       }).catch((err) => {
-        console.log(err);
+        console.error(err);
         return reject(generateRejection('Error querying database', 500));
       });
     });
