@@ -1,10 +1,11 @@
 form#search {
 	padding: 5px;
+	text-align:center;
 	width: 100%;
     webkit-appearance: none !important;
 }
 div.search {
-	width: 500px;
+	width: 300px;
 	margin: auto;
 	position: relative;
 	color: #f0f0f0;
@@ -17,12 +18,12 @@ div.search .icon{
 	padding-left: 20px;
 }
 input#search {
-	padding: 10px;
+	margin: auto;
 	height: 40px;
 	background: rgba(181,181,181,0.62);
 	border-radius: 40px;
 	padding-left: 45px;
-	width: 80%;
+	width: 300px;
 	color: white;
 	font-size: 1em;
 	font-family: "Roboto", sans-serif;

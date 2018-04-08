@@ -7,14 +7,107 @@ block contents
   style
     include ../public/stylesheets/listing.css
 
+  div.purple-box
+    div.inner-box
+      img(src='../public/images/put-a-bird-on-it_preview.png').logo
+      h1 THE HELP BOOK
+      h3 A Platform for Care
+
   article.single-listing
     section
       h2=record.Service_Name
-      p=record.Hours_of_Operation
-      p=record.Service_Location_Email
-      p=record.Hours_of_Operation
-      p=record.Physical_Site_Address_1
-      p=record.Physical_Site_City
-      p=record.Physical_Site_State
-      p=record.Physical_Site_Zip
+      p=record.Description_of_Service
+
+      table
+        tr
+          td.left
+            h4 Address: 
+          td
+            p=record.Physical_Site_Address_1
+        tr
+          td.left
+            h4 City: 
+          td 
+            p=record.Physical_Site_City
+        tr
+          td.left
+            h4 State: 
+          td
+            p=record.Physical_Site_State
+        tr
+          td.left
+            h4 Zipcode
+          td
+            p=record.Physical_Site_Zip
+        tr
+          td.left
+            h4 Main phone
+          td
+            p=record.Main_Phone
+        tr 
+          td.left
+            h4 Email
+          td
+            p=record.Service_Location_Email
+        tr
+          td.left
+            h4 Web Site
+          td
+            p=record.Web_Address
+        tr
+          td.left
+            h4 Hours of operation
+          td
+            p=record.Hours_of_Operation
+        tr
+          td.left
+            h4 Languages spoke
+          td
+            p=record.Languages_Spoken
+        tr
+          td.left
+            h4 ADA Access
+          td
+            p=record.ADA_Access
+        tr
+          td.left
+            h4 Fax
+          td
+            p=record.Fax
+        tr
+          td.left
+            h4 Intended participats
+          td
+            p=record.Intended_Participants
+        tr
+          td.left
+            h4 Location
+          td
+            p=record.Location
+        tr
+          td.left
+            h4 Notes
+          td
+            p=record.Notes
+        tr 
+          td.left
+            h4 Other names
+          td
+            p.record.Other_Name
+        tr
+          td.left
+            h4 Service location email
+          td 
+            p=record.Service_Location_Email
+        tr 
+          td.left
+            h4 Status
+          td
+            p=record.Status
+        tr 
+          td.left
+            h4 WBC Crisis Line
+          td
+            p=record.WBCrisisLine
+
 

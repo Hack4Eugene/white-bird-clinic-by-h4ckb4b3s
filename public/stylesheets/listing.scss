@@ -1,3 +1,52 @@
+body {
+  backgroud-color: white;
+}
+
+div.purple-box {
+	height: 200px;
+    background-image: url(../public/images/whitebird-bg-desktop.png);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-attachment: fixed;
+    padding: 96 48 96 48;
+    h1 {
+      text-align: center;
+    }
+    h3 {
+      text-align: center;
+    }
+    div.inner-box {
+      margin: auto;
+      width: 400px;
+      img.logo {
+        width: 50px;
+        display:block;
+        margin: auto;
+      }
+    }
+}
+
+article.single-listing {
+	h1 {
+	  text-align: center;
+	}
+	table {
+	border-collapse: collapse;
+	margin:10px;
+	  tr {
+	    border-bottom: 1px #6a74af solid;
+	  }
+	  td {
+	    border-bottom: .5px #6a74af solid;
+	    padding: 10px;
+	  }	  
+	  td.left {
+	    border-bottom: .5px #6a74af solid;
+	    padding: 10px;
+	  }
+	}
+}
+
 article.listings {
 	width: 400px;
 	margin: auto;
@@ -6,11 +55,11 @@ article.listings {
 
 section.service {
 	background-color: white;
-	border-left: 3px blue solid;
+	border-left: 3px #6a74af solid;
 	margin: 10px;
 	padding: 1 20 1 20;
 	h3 {
-	  size: 1.3em;
+	  size: 1.2em;
 	  font-weight: 500;
 	}
 	span.icon {
@@ -32,7 +81,7 @@ div.left {
     vertical-align: top;
 	width:60%;
 	display: inline-block;
-	border-right: 1px solid grey;
+	border-right: 1px solid #6a74af;
 	margin-right: 20px;
 
 }
@@ -47,10 +96,12 @@ div.right {
 
 	}
     a.email {
+      color: #6a74af;
       line-height: 24px;
 	  padding-left: 25px;
 	}
 	a.web {
+	  color: #6a74af;
 	  padding-left: 25px;
 	}
 	div.hours {

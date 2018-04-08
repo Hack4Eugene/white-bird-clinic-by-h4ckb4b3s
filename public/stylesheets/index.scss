@@ -131,7 +131,7 @@ div.purple-box {
     }
     div.inner-box {
       margin: auto;
-      width: 600px;
+      width: 400px;
       img.logo {
         width: 50px;
         display:block;
@@ -216,14 +216,3 @@ div.btn-rect {
 }
 
 
-
-@media (max-width: 720px){ 
-  article { 
-  	width: 90%;
-  }
-  div.btn {
-  	h2 {
-    	font-size: 1.5em;
-  	}
-  }
-}
