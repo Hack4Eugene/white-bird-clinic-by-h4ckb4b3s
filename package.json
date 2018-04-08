@@ -13,8 +13,12 @@
     "body-parser": "^1.18.2",
     "csv-parse": "^2.2.0",
     "express": "^4.16.3",
+    "express-session": "^1.15.6",
     "lodash": "^4.17.5",
     "mongoose": "^5.0.13",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^5.0.0",
     "pug": "^2.0.3",
     "sass": "^1.1.1",
     "scss": "^0.2.4"
