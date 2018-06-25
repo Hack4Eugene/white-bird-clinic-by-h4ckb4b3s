@@ -1,4 +1,4 @@
-.PHONY: test
+.HONY: test
 
 # Starts the spplication server
 start: build
@@ -6,11 +6,11 @@ start: build
 
 # Renders .scss files into .css
 scss:
-	node ./utils/renderscss/js
+	node utils/renderscss.js
 
 # builds application resources
 build:
-	node ./utils/renderscss.js
+	node utils/renderscss.js
 
 # Seeds data into the local database
 seed:

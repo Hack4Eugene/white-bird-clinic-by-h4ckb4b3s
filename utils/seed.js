@@ -10,7 +10,7 @@ const db = require('../src/db.js');
 const Data = require('../src/data.js');
 const config = require('../config/config.js');
 
-const DATA_CSV_LOCATION = __dirname + '/../secret/data_combined.csv';
+const DATA_CSV_LOCATION = __dirname + '/data_combined.csv';
 const REPORT_MODULUS = 50;
 
 /**
