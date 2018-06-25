@@ -6,18 +6,6 @@ block contents
   style
     include ../public/stylesheets/listing.css
 
-  a(href='/')
-    div.purple-box
-      div.inner-box
-        img(src='../public/images/put-a-bird-on-it_preview.png').logo
-        h1 THE HELP BOOK
-        p Building community through wellness and empowerment
-
-      div.search
-      include search.pug
-      +search
-      
-
   article.listings
     h2 Alphabetical listings
     each val in record.slice(0, 20)     

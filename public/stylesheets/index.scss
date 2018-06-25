@@ -29,6 +29,7 @@ html, body {
   background-color: $color6;
 }
 
+
 /* Headings  and font style */
 
 h1 {
@@ -100,12 +101,15 @@ span.icon {
 
 
 div.purple-box {
-  height: 200px;
+    height: 200px;
     background-image: url(../public/images/whitebird-bg-desktop.png);
     background-repeat: no-repeat;
     background-position: center top;
     background-attachment: fixed;
-    padding: 96 48 96 48;
+    padding: 96 0 96 0;
+    margin: 0 auto 0 auto;
+    position: static;
+    width: 100%;
     h1 {
       text-align: center;
     }
@@ -225,23 +229,70 @@ section.login {
   margin: auto;
 }
 
-footer {
-  background-color: $color4;
-  bottom: 0;
-  height: 100px;
-  ul {
-    padding:0;
-    margin: 0;
-    li {
-      color: $color1;
+ footer {
+    padding: 8px 32px;
+    background-color: #4a4a4a;
+    height: auto;
+    width: auto;
+    display: block;
+    .footer-wrap{
+      max-width: 1100px;
+      margin: 16px auto;    
+      }
+    h3 {
+      text-align: left;
+      vertical-align:left;
+      color: #fff;
+      font-size: 16px;
+    } 
+    P {
+        color: #fff;
+        text-align: left;
+        font-size: 10px;
+        line-height: 10px
+      }
+    .first-foot {
+      vertical-align: top;
       display: inline-block;
       width: 33%;
-      padding: 40 0 40 0;
-      text-align: center;
     }
-  }
+    .second-foot {
+      vertical-align: top;
+      display: inline-block;
+      width: 33%;
+      a {
+        text-decoration: none;
+        color: #fff;
+        font-size: 10px;
+        line-height: 10px;
+        display:block;
+        margin: auto;
+        text-align: left;
+      }
+    }
+    .third-foot {
+      vertical-align: top;
+      display: inline-block;
+      width: 33%;
+      .social {
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+        span {
+          width: 48px;
+          height: 48px;
+          border: 1px solid white;
+          border-radius: 48px;
+          margin: 0px 8px 0px 0px;
+          i {
+            padding-left: 18px;
+            color: white;
+            line-height: 48px;
+          }
+        }
+      }
+    }
 }
-
 @media (max-width: 700px){ 
   .container{
     height: auto;
@@ -264,21 +315,68 @@ footer {
     }
   }
   
-  footer {
-    background-color: $color4;
-    bottom: 0;
-    height: 100px;
-    ul {
-      margin: 0;
-      li {
-        color: $color1;
-        display: inline-block;
-        width: 33%;
-        padding: 40 0 40 0;
+
+   footer {
+    padding: 16px 8px;
+    background-color: #4a4a4a;
+    height: auto;
+    width: auto;
+    display: block;
+    h3 {
+      text-align: center;
+      color: #fff;
+    } 
+    .first-foot {
+      margin: auto;
+      display: block;
+
+      P {
+        color: #fff;
+        text-align: center;
+        line-height: 10px
+      }
+    }
+    .second-foot {
+      margin: 32px auto;
+      display: block;
+      P {
+        color: #fff;
+        text-align: center;
+      }
+      a {
+        text-decoration: none;
+        color: #fff;
+        display:block;
+        margin: auto;
         text-align: center;
       }
     }
-  }
+    .third-foot {
+      margin: auto;
+      display: block;
+      P {
+        color: #fff;
+        text-align: center;
+      }
+      .social {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        span {
+          width: 48px;
+          height: 48px;
+          border: 1px solid white;
+          border-radius: 48px;
+          margin: 0px 8px;
+          i {
+            padding-left: 18px;
+            color: white;
+            line-height: 48px;
+          }
+        }
+      }
+    }
+    }
 
 }
 
@@ -300,6 +398,66 @@ footer {
     padding-bottom: 50px;
     width: 90%
    }
+
+  footer {
+    padding: 16px 8px;
+    background-color: #4a4a4a;
+    height: auto;
+    width: auto;
+    display: block;
+    h3 {
+      text-align: center;
+      color: #fff;
+    } 
+    .first-foot {
+      display: block;
+
+      P {
+        color: #fff;
+        text-align: center;
+        line-height: 10px
+      }
+    }
+    .second-foot {
+      margin-top: 32px;
+      display: block;
+      P {
+        color: #fff;
+        text-align: center;
+      }
+      a {
+        text-decoration: none;
+        color: #fff;
+        display:block;
+        margin: auto;
+        text-align: center;
+      }
+    }
+    .third-foot {
+      display: block;
+      P {
+        color: #fff;
+        text-align: center;
+      }
+      .social {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        span {
+          width: 48px;
+          height: 48px;
+          border: 1px solid white;
+          border-radius: 48px;
+          margin: 0px 8px;
+          i {
+            padding-left: 18px;
+            color: white;
+            line-height: 48px;
+          }
+        }
+      }
+    }
+  }
 }
 
 

@@ -17,14 +17,38 @@ html
     style
       include ../public/stylesheets/index.css
 
-    block head
+    div.purple-box
+      div.inner-box
+        a(href='/')
+          img(src='../public/images/put-a-bird-on-it_preview.png').logo
+        h1 THE HELP BOOK
+        p Building community through wellness and empowerment
 
+      div.search
+        include search.pug
+        +search
     body 
 
       block contents
    
     footer
-      ul
-        li Donate
-        li Volunteer 
-        li Contact
+      .footer-wrap
+        div.first-foot
+          h3 DONATE OR VOLUNTEER
+          p 1234 Taylor Street 
+          p Eugene, OR 97405
+        div.second-foot
+          h3 CONTACT US 
+          a(href='tel:555-555-5555') (123) 456-7899
+          p 7AM-5PM PST M-F
+        div.third-foot
+          h3 THE HELP BOOK
+          p Powered by White Bird Clinic
+          div.social
+            span            
+              i.fa.fa-facebook
+            span 
+              i.fa.fa-linkedin
+            span
+              i.fa.fa-twitter
+

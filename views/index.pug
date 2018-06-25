@@ -4,16 +4,6 @@ extends layout.pug
 block contents 
   style
     include ../public/stylesheets/index.css
-
-  div.purple-box
-    div.inner-box
-      img(src='../public/images/put-a-bird-on-it_preview.png').logo
-      h1 THE HELP BOOK
-      p Building community through wellness and empowerment
-
-    div.search
-      include search.pug
-      +search
     
   section.primary-options
     div.banner
@@ -54,28 +44,28 @@ block contents
         div.btn-copy
           p Search by category
         span.icon
-         i.fa.fa-angle-right
+          i.fa.fa-angle-right
 
     a(href='/listings') 
       div.btn-rect
         div.btn-copy
           p Search by agency
         span.icon
-         i.fa.fa-angle-right 
+          i.fa.fa-angle-right 
 
     a(href='/listings') 
       div.btn-rect
         div.btn-copy
           p I want to update/edit a record
         span.icon
-         i.fa.fa-angle-right
+          i.fa.fa-angle-right
 
     a(href='/listings') 
       div.btn-rect
         div.btn-copy
           p I want to add a new record
         span.icon
-         i.fa.fa-angle-right
+          i.fa.fa-angle-right
 
   section.image 
     img(src='../public/images/tree-horizontal.jpg')

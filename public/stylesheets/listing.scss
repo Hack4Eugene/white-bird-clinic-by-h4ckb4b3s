@@ -1,33 +1,7 @@
 body {
 }
 
-div.purple-box {
-	height: 200px;
-    background-image: url(../public/images/whitebird-bg-desktop.png);
-    background-repeat: no-repeat;
-    background-position: center top;
-    background-attachment: fixed;
-    padding: 96 48 96 48;
-    h1 {
-      text-align: center;
-    }
-    h3 {
-      text-align: center;
-    }
-    div.inner-box {
-      margin: auto;
-      width: 400px;
-      img.logo {
-        width: 50px;
-        display:block;
-        margin: auto;
-      }
-    }
-}
-
-
 article.single-listing {
-
 
 	h1 {
 	  text-align: center;
